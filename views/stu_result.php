@@ -1,7 +1,4 @@
-    <?php 
-    include('includes/header.php');
-    $connection = mysqli_connect("localhost", "root", "", "stutms");
-?>
+    <?php include('includes/header.php');?>
       <div class="container">
         <div class="row">
             <div class="col-md-12 mt-5" >
@@ -11,11 +8,7 @@
                         <a href="register.php" class="btn btn-primary float-right">Register/Add</a>
                     </div>
                     <div class="card-body">
-                        <?php
-                        $query = "SELECT * FROM results";
-                        $query_run = mysqli_query($connection, $query);
-                        if(mysqli_num_rows($query_run) > 0)
-                        {?>
+                        
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -28,35 +21,20 @@
                                 <th scope="col">Delete</th>
                                 </tr>
                             </thead>
-                            <?php
-                            while ($reg_row = mysqli_fetch_array($query_run)) {
-                                ?>
                             <tbody>
                                 <tr>
-                                <th><?php echo($reg_row['Roll_num'])?></th>
-                                <td><?php echo($reg_row['Name'])?></td>
-                                <td><?php echo($reg_row['Semester'])?></td>
-                                <td><?php echo($reg_row['Total_marks'])?></td>
-                                <td><?php echo($reg_row['Obtained_marks'])?></td>
+                                <th>6</th>
+                                <td>Hassam</td>
+                                <td>4th</td>
+                                <td>150</td>
+                                <td>130</td>
                                 <td><a href="" class="btn btn-info">Edit</a></td>
                                 <td>
                                     <a href="" class="btn btn-danger">Danger</a>
                                 </td>
                                 </tr>
                             </tbody>
-                            <?php
-                            }
-                            ?>
                             </table>
-
-
-                         <?php   }
-                        else
-                        {
-                            echo "No Record Found";
-                        }
-
-                            ?>
                     </div>
                 </div>
             </div>
