@@ -1,5 +1,7 @@
-    <?php 
+    <?php session_start();
     include('includes/header.php');
+    
+            auth();
     $connection = mysqli_connect("localhost", "root", "", "stutms");
 ?>
       <div class="container">
@@ -64,6 +66,7 @@
                     </div>
                     <div class="card-footer">
                             <a href="/admin_signup" class="btn btn-primary">New Admin</a>
+                            <a href="/logout" class="btn btn-danger" style = "margin-left: 985px">Logout</a>
                     </div>
                 </div>
             </div>

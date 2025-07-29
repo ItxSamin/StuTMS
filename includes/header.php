@@ -8,3 +8,15 @@
   </head>
 
   <body>
+    <?php
+    function auth(){
+    $username = $_SESSION['username'];
+
+    if ($username == true){
+
+    }
+    else {
+         header("Location:/admin_login");
+        
+    }}
+    ?>

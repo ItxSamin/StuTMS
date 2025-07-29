@@ -2,7 +2,7 @@
 include('includes/header.php');
     $connection = mysqli_connect("localhost", "root", "", "stutms");
 if(isset($_POST["chk_btn"])) {
-    $id = mysqli_real_escape_string($connection, $_POST['rollnumber']);
+    $id = $_POST['rollnumber'];
 
     $query = "SELECT * FROM `results` WHERE `Roll_num` = '$id'";
     $query_run = mysqli_query($connection, $query);

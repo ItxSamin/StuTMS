@@ -1,4 +1,5 @@
 <?php
+session_start();
 
     $connection = mysqli_connect("localhost", "root", "", "stutms");
 
@@ -77,14 +78,13 @@
         $verify = mysqli_fetch_array($query_run);
 
         if($verify['username'] == $username && $verify['password'] == $password){
+            $_SESSION['username'] = $username;
             header("Location: /");
         }
         else {
             header("Location: /admin_login");
         }
         } 
-        
 
-    
 
 ?>

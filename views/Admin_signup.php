@@ -1,7 +1,8 @@
-    <?php 
+    <?php session_start();
     include(__DIR__ . '/../includes/header.php');
     
     
+            auth();
     ?>
 
 

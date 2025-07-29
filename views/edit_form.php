@@ -1,5 +1,8 @@
-    <?php 
+    <?php session_start();
     include(__DIR__ . '/../includes/header.php');
+    
+            auth();
+
     $connection = mysqli_connect("localhost", "root", "", "stutms");
     $query = "SELECT * FROM results WHERE ROll_num = $id";
     $query_run = mysqli_query($connection, $query);

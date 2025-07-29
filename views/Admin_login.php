@@ -1,4 +1,6 @@
-<?php include ('includes/header.php');?>
+<?php include ('includes/header.php');
+session_start();?>
+
 
 <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
     <div style="width: 50%;">
@@ -16,7 +18,7 @@
     <label for="exampleInputPassword1" class="form-label">Password</label>
     <input type="password" class="form-control" name="password" placeholder="Enter password">
   </div>
-    <button type="submit" class="btn btn-primary" name= "login-btn">Submit</button>
+    <button type="submit" class="btn btn-primary" name= "login-btn">Login</button>
 </form>
 
 
