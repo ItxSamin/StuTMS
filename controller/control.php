@@ -36,4 +36,55 @@
         }
     }
 
+    if(isset($_POST['edit_btn'])){
+
+        $name = $_POST['name'];
+        $semester = $_POST['semester'];
+        $tmarks = $_POST['tmarks'];
+        $omarks = $_POST['omarks'];
+        $id = $_POST['roll_number'];
+
+        $query = "UPDATE `results` SET `Name`='$name',`Semester`='$semester',`Total_marks`='$tmarks',`Obtained_marks`='$omarks' WHERE `Roll_num` = $id";
+        $query_run = mysqli_query($connection, $query);
+        if($query_run){
+            header("Location: /");
+        } else {
+            header("Location: /");
+        }
+    }
+
+
+    if(isset($_POST['Delete_btn'])){
+        $id = $_POST['roll_number'];
+
+        $query = "DELETE FROM `results` WHERE `Roll_num` = $id";
+        $query_run = mysqli_query($connection, $query);
+        if($query_run){
+            header("Location: /");
+        } else {
+            header("Location: /");
+        }
+    }
+
+
+    if(isset($_POST['login-btn'])){
+
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        $query = "SELECT * FROM `admin` WHERE `username` = '$username'";
+        $query_run = mysqli_query($connection, $query);
+        $verify = mysqli_fetch_array($query_run);
+
+        if($verify['username'] == $username && $verify['password'] == $password){
+            header("Location: /");
+        }
+        else {
+            header("Location: /admin_login");
+        }
+        } 
+        
+
+    
+
 ?>

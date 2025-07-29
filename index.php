@@ -8,7 +8,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h4>Student_Results</h4>
-                        <a href="register.php" class="btn btn-primary float-right">Register/Add</a>
+                        <a href="/entry" class="btn btn-primary float-right">Register/Add</a>
                     </div>
                     <div class="card-body">
                         <?php
@@ -38,9 +38,13 @@
                                 <td><?php echo($reg_row['Semester'])?></td>
                                 <td><?php echo($reg_row['Total_marks'])?></td>
                                 <td><?php echo($reg_row['Obtained_marks'])?></td>
-                                <td><a href="" class="btn btn-info">Edit</a></td>
+                                <td><a href="/edit_form/<?php echo($reg_row['Roll_num'])?>" class="btn btn-info">Edit</a></td>
                                 <td>
-                                    <a href="" class="btn btn-danger">Danger</a>
+                                    <form action="/process" method="POST">
+                                            <input type="hidden" name ="roll_number" class="form-control" value = "<?php echo $reg_row['Roll_num'];?>">
+                                        <button type="submit" class="btn btn-danger" name = "Delete_btn">Delete</button>
+                                    </form>
+
                                 </td>
                                 </tr>
                             </tbody>
@@ -57,6 +61,9 @@
                         }
 
                             ?>
+                    </div>
+                    <div class="card-footer">
+                            <a href="/admin_signup" class="btn btn-primary">New Admin</a>
                     </div>
                 </div>
             </div>
