@@ -16,8 +16,12 @@ session_start();
         $query = "INSERT INTO `results`(`Name`, `Semester`, `Total_marks`, `Obtained_marks`) VALUES ('$name','$semester','$tmarks','$omarks')";
         $query_run = mysqli_query($connection, $query);
         if($query_run){
+            $_SESSION['status'] = "Data Inserted Successfully";
+        $_SESSION['status_code'] = "success";
             header("Location: /");
         } else {
+            $_SESSION['status'] = "Error Occurred";
+        $_SESSION['status_code'] = "error";
             header("Location: /");
         }
     }
@@ -31,8 +35,12 @@ session_start();
         $query = "INSERT INTO `admin`(`username`, `password`) VALUES ('$username','$password')";
         $query_run = mysqli_query($connection, $query);
         if($query_run){
+            $_SESSION['status'] = "Signup Successful";
+        $_SESSION['status_code'] = "success";
             header("Location: /");
         } else {
+            $_SESSION['status'] = "Error Occurred";
+        $_SESSION['status_code'] = "error";
             header("Location: /");
         }
     }
@@ -48,8 +56,12 @@ session_start();
         $query = "UPDATE `results` SET `Name`='$name',`Semester`='$semester',`Total_marks`='$tmarks',`Obtained_marks`='$omarks' WHERE `Roll_num` = $id";
         $query_run = mysqli_query($connection, $query);
         if($query_run){
+            $_SESSION['status'] = "Data Updated Successfully";
+        $_SESSION['status_code'] = "success";
             header("Location: /");
         } else {
+            $_SESSION['status'] = "Error Occurred";
+        $_SESSION['status_code'] = "error";
             header("Location: /");
         }
     }
@@ -61,8 +73,12 @@ session_start();
         $query = "DELETE FROM `results` WHERE `Roll_num` = $id";
         $query_run = mysqli_query($connection, $query);
         if($query_run){
+            $_SESSION['status'] = "Data Deleted Successfully";
+        $_SESSION['status_code'] = "success";
             header("Location: /");
         } else {
+            $_SESSION['status'] = "Error Occurred";
+        $_SESSION['status_code'] = "error";
             header("Location: /");
         }
     }
@@ -79,9 +95,13 @@ session_start();
 
         if($verify['username'] == $username && $verify['password'] == $password){
             $_SESSION['username'] = $username;
+            $_SESSION['status'] = "Login Successful";
+        $_SESSION['status_code'] = "success";
             header("Location: /");
         }
         else {
+            $_SESSION['status'] = "Error Occurred";
+        $_SESSION['status_code'] = "error";
             header("Location: /admin_login");
         }
         } 
