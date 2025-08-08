@@ -20,6 +20,14 @@
                                 <label>Name</label>
                                 <input type="text" name ="name" class="form-control" placeholder="Enter Student Name">
                             </div>
+                            <div class="mb-3">
+                                <label>Email</label>
+                                <input type="text" name ="email" class="form-control" placeholder="Enter Student Name">
+                            </div>
+                            <div class="mb-3">
+                                <label>Phone</label>
+                                <input type="text" name ="phone" class="form-control" placeholder="Enter Student Name">
+                            </div>
                             <button type="submit" name="add_stu_btn" class="btn btn-primary">Sign_up</button>
                         </fieldset>
                         </form>

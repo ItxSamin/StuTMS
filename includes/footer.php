@@ -15,6 +15,5 @@ if (isset($_SESSION['status']) && $_SESSION['status'] != '') {
  
  ?>
   
-  
   </body>
 </html>

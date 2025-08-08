@@ -21,6 +21,14 @@
                                 <input type="text" name ="name" class="form-control" placeholder="Enter Username">
                             </div>
                             <div class="mb-3">
+                                <label>Email</label>
+                                <input type="text" name ="email" class="form-control" placeholder="Enter Email">
+                            </div>
+                            <div class="mb-3">
+                                <label>Phone</label>
+                                <input type="text" name ="phone" class="form-control" placeholder="Enter Phone">
+                            </div>
+                            <div class="mb-3">
                                 <label>Password</label>
                                 <input type="text" name ="password" class="form-control" placeholder="Enter Password">
                             </div>

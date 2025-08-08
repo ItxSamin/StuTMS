@@ -14,6 +14,10 @@ get ('/admin_control', 'views/admin_control.php');
 get ('/logout','controller/logout.php');
 get ('/add_stu', 'views/add_stu.php');
 get ('/add_tea', 'views/add_tea.php');
+get ('/post', 'views/post.php');
+get ('/notif_chk', 'controller/notif_chk.php');
+get ('/unread','controller/unread.php');
+post ('/notif_chk', 'controller/notif_chk.php');
 post ('/stu_result', 'views/stu_login.php');
 post('/process', 'controller/control.php');
 
